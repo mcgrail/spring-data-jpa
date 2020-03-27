@@ -5,7 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.ToString;
+
 @Entity
+@ToString
 public class Customer {
 
 	@Id
@@ -19,13 +22,6 @@ public class Customer {
 	public Customer(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-	}
-
-	@Override
-	public String toString() {
-		return String.format(
-				"Customer[id=%d, firstName='%s', lastName='%s']",
-				id, firstName, lastName);
 	}
 
 	public Long getId() {

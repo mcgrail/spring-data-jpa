@@ -24,6 +24,7 @@ public class CustomerController {
 	    List<Customer> customers = new ArrayList<Customer>();
 		
 		// Kick off multiple asynchronous lookups
+	    log.info("Calling service to retreive customers.");
 	    CompletableFuture<Customer> customer0 = customerService.getCustomer(1);
 	    CompletableFuture<Customer> customer1 = customerService.getCustomer(2);
 	    CompletableFuture<Customer> customer2 = customerService.getCustomer(4);

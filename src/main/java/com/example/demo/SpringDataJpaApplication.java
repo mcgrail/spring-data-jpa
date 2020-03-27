@@ -23,7 +23,7 @@ public class SpringDataJpaApplication {
 
 	@Bean
 	public CommandLineRunner demo(CustomerRepository repository) {
-		return (args) -> {
+		return args -> {
 			// save a few customers
 			repository.save(new Customer("Ryan", "Murray"));
 			repository.save(new Customer("Susan", "Huff"));
@@ -50,22 +50,19 @@ public class SpringDataJpaApplication {
 			// fetch customers by last name
 			log.info("Customer found with findByLastName('Murray'):");
 			log.info("--------------------------------------------");
-			repository.findByLastName("Murray").forEach(foundCustomer -> {
-				log.info(foundCustomer.toString());
-			});
+			repository.findByLastName("Murray").forEach(foundCustomer -> log.info(foundCustomer.toString()));
 			log.info("");
 		};
 	}
 
+	@Bean("threadPoolTaskExecutor")
+	public TaskExecutor getAsyncExecutor() {
+		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+		executor.setCorePoolSize(20);
+		executor.setMaxPoolSize(1000);
+		executor.setWaitForTasksToCompleteOnShutdown(true);
+		executor.setThreadNamePrefix("Async-");
+		return executor;
+	}
 
-    @Bean("threadPoolTaskExecutor")
-    public TaskExecutor getAsyncExecutor() {
-        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(20);
-        executor.setMaxPoolSize(1000);
-        executor.setWaitForTasksToCompleteOnShutdown(true);
-        executor.setThreadNamePrefix("Async-");
-        return executor;
-    }
-	
 }

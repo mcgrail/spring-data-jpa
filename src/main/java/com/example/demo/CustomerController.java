@@ -21,7 +21,7 @@ public class CustomerController {
 
 	@GetMapping("/")
 	public String displayCustomers(Model model) throws InterruptedException, ExecutionException {
-	    List<Customer> customers = new ArrayList<Customer>();
+	    List<Customer> customers = new ArrayList<>();
 		
 		// Kick off multiple asynchronous lookups
 	    log.info("Calling service to retreive customers.");

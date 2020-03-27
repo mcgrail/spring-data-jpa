@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.2.6.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
+	id "org.sonarqube" version "2.8"
 }
 
 group = 'com.example'
@@ -39,4 +40,13 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+sonarqube {
+	properties {
+	  property "sonar.projectKey", "mcgrail_spring-data-jpa"
+	  property "sonar.organization", "mcgrail"
+	  property "sonar.host.url", "https://sonarcloud.io"
+	  property "sonar.login", findProperty("sonarToken")
+	}
 }

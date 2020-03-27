@@ -52,3 +52,13 @@ sonarqube {
 	  property "sonar.sources", "src/main/java,src/main/resources"
 	}
 }
+
+jacocoTestReport {
+	reports {
+		xml.enabled true
+		csv.enabled false
+		html.enabled false
+	}
+}
+
+test.finalizedBy jacocoTestReport

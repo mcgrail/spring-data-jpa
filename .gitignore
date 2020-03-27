@@ -1,32 +1,56 @@
-HELP.md
-.gradle
-build/
+# Operating System Files #
+
+*.DS_Store
+Thumbs.db
+
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
 !**/src/test/**
 
-### STS ###
-.apt_generated
+# Build Files #
+
+bin
+target
+build/
+.gradle
+
+# Eclipse/STS Files #
+
 .classpath
-.factorypath
 .project
 .settings
 .springBeans
+.apt_generated
+.factorypath
 .sts4-cache
 
-### IntelliJ IDEA ###
-.idea
-*.iws
+# IntelliJ IDEA Files #
+
 *.iml
 *.ipr
+*.iws
+*.idea
 out/
 
-### NetBeans ###
+# NetBeans Files #
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
 
-### VS Code ###
+# VS Code Files #
 .vscode/
+
+# Test files
+
+accessingdataneo4j.db
+dependency-reduced-pom.xml
+README.html
+
+# Other Files #
+HELP.md
+.externalToolBuilders
+*.log
+vf.gf.*
+_site

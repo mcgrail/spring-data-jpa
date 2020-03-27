@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Getter;
 import lombok.ToString;
 
 @Entity
@@ -13,8 +14,11 @@ public class Customer {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Getter
 	private Long id;
+	@Getter
 	private String firstName;
+	@Getter
 	private String lastName;
 
 	protected Customer() {}
@@ -24,15 +28,4 @@ public class Customer {
 		this.lastName = lastName;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
 }

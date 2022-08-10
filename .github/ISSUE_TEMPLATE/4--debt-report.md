@@ -1,6 +1,6 @@
 ---
 name: 4. Debt report
-about: Create a report of a debt for this project.
+about: Create a report of a debt for this project
 title: Debt - Some Debt
 labels: debt
 assignees: ''

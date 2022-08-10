@@ -2,7 +2,7 @@
 name: 1. Feature request
 about: Suggest an idea for this project
 title: ''
-labels: ''
+labels: risk
 assignees: ''
 
 ---

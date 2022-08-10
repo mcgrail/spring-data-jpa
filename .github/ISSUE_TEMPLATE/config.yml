@@ -1,5 +1,5 @@
 blank_issues_enabled: true
 contact_links:
   - name: Ask a question or get support
-    url: https://github.com/mcgrail/spring-data-jpa/discussions/new
+    url: https://github.com/mcgrail/spring-data-jpa/discussions/new?category=q-a
     about: Ask a question or request support for using spring-data-jpa example
